@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Todo App</h1>
+        <div>
+            <form action="/" onsubmit="submitHandler(event)">
+                <div>
+                    <input type="text" name="todo" id="todoText">
+                    <input type="reset" value="X">
+                </div>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="todos">
+            <ul id="todosList"></ul>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+
+</script>
+
+</html>
