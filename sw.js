@@ -1,10 +1,9 @@
 var CACHE_NAME = 'v2';
 var urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/app.js',
-    '/favicon.ico'
+    'index.html',
+    'style.css',
+    'app.js',
+    'favicon.ico'
 ];
 
 self.addEventListener('install', function (event) {
