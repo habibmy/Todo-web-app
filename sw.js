@@ -3,7 +3,13 @@ var urlsToCache = [
     'index.html',
     'style.css',
     'app.js',
-    'favicon.ico'
+    'favicon.ico',
+    'manifest.json',
+    'icons/icon512.png',
+    'icons/icon256.png',
+    'icons/icon128.png',
+    'icons/icon64.png',
+    'icons/icon32.png'
 ];
 
 self.addEventListener('install', function (event) {
