@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
     <title>Todo App</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>My Todo App</h1>
-        <div>
-            <form action="" onsubmit="submitHandler(event)">
-                <div>
-                    <input type="text" name="todo" id="todoText">
-                    <input type="reset" value="X">
-                </div>
-                <input type="submit" value="submit">
-            </form>
-        </div>
-        <div class="todos">
-            <ul id="todosList"></ul>
-        </div>
+      <h1>My Todo App</h1>
+      <div>
+        <form action="" onsubmit="submitHandler(event)">
+          <div>
+            <input type="text" name="todo" id="todoText" />
+            <button type="reset">
+              <img
+                src="data:image/png;base64,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"
+                height="60%"
+              />
+            </button>
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div class="todos">
+        <ul id="todosList"></ul>
+      </div>
     </div>
-</body>
-<script src="app.js"></script>
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('sw.js').then(function (registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function (err) {
-                // registration failed :(
-                console.log('ServiceWorker registration failed: ', err);
-            });
-        });
+  </body>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").then(
+          function (registration) {
+            // Registration was successful
+            console.log(
+              "ServiceWorker registration successful with scope: ",
+              registration.scope
+            );
+          },
+          function (err) {
+            // registration failed :(
+            console.log("ServiceWorker registration failed: ", err);
+          }
+        );
+      });
     }
-
-</script>
-
+  </script>
 </html>
